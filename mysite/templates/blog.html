@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %}
+{% load static %}
+
+{% block content %}
+  <main id="main"> 
+    <!-- ======= Blog Section ======= -->
+    <section id="blogs" class="blogs">
+      <div class="container" data-aos="fade-up">
+          <div class="row">
+              <div class="col-md-8">
+                    <!-- blog entry -->
+                    <article class="entry">
+                      <div class="entry-img  container d-flex align-items-center shadow p-4 mb-3 bg-white rounded-md">
+                        {% block Article-1 %}
+                            {% placeholder "Article_content" %}
+                        {% endblock Article-1 %}
+                      </div>
+                    </article>
+                    <!-- End blog entry -->
+              </div>
+              <div class="col-lg-4">
+                    <div class="sidebar container d-flex align-items-center shadow p-4 mb-3 bg-white rounded">
+                        <!-- ===== sidebar search form ===== -->
+                        <div class="sidebar-item search-form ">
+                          {% block Search-form %}
+                            {% placeholder "Search-form_content" %}
+                          {% endblock Search-form %}
+                        </div><!-- ===== End sidebar search formn ===== -->
+                        <br>
+                        <!-- ===== sidebar Categories ===== -->
+                        <div class="sidebar-item categorie">
+                          {% block Categories %}
+                              {% placeholder "Categories_content" %}
+                          {% endblock Categories %}
+                        </div><!-- End sidebar categories-->
+                        <br>
+                        <!-- ===== sidebar Recent Post ===== -->
+                        <div class="sidebar-item recent-posts">
+                          {% block Recent-Posts %}
+                              {% placeholder "Recent-Posts_content" %}
+                          {% endblock Recent-Posts %}
+                        </div>
+                        <!-- ==== End sidebar recent posts ==== -->
+                         <br>
+                        <div class="sidebar-item tags">
+                          {% block Tags %}
+                            {% placeholder "Tags_content" %}
+                          {% endblock Tags %}
+                        </div><!-- ==== End sidebar tags ==== -->
+                    </div>
+              </div>
+          </div><!-- ==== End sidebar ==== -->
+      </div><!-- ==== End blog entries list ==== -->
+
+
+      </div>
+
+    </section><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+{% endblock %}
